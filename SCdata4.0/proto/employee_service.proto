@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package employee;
+
+// TRPC服务定义
+service EmployeeService {
+  rpc AddEmployee (AddEmployeeRequest) returns (AddEmployeeResponse);
+  rpc DelEmployee (DelEmployeeRequest) returns (DelEmployeeResponse);
+  rpc LookEmployee (LookEmployeeRequest) returns (LookEmployeeResponse);
+  rpc ModiEmployee (ModiEmployeeRequest) returns (ModiEmployeeResponse);
+  rpc Checktheid (ChecktheidRequest) returns (ChecktheidResponse);
+}
+
+// 请求和响应的消息定义
+message AddEmployeeRequest {
+  string id = 1;
+  string name = 2;
+  int32 age = 3;
+  string department = 4;
+}
+
+message AddEmployeeResponse {
+  bool success = 1;
+}
+
+// 其他消息定义...
